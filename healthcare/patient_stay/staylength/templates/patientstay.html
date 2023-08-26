@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
-<body>
-
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
-
-</body>
-</html>
+<div class="container">
+    <form method="POST">
+      <fieldset>
+        <legend>Form</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+</div>
