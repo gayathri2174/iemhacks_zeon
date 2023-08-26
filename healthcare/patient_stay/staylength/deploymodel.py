@@ -8,7 +8,7 @@ model = joblib.load('model.joblib')
 
 # Example values from the first row
 data = {
-    'Hospital_code': [14.0],
+    'Hospital_code': [14.0], 
     'Hospital_type_code': [0.0],
     'City_Code_Hospital': [1.0],
     'Available Extra Rooms in Hospital': [2.0],
