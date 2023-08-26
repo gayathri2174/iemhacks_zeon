@@ -5,8 +5,8 @@ import joblib
 import warnings
 from sklearn.model_selection import train_test_split
 import xgboost 
- 
-np.set_printoptions(suppress=True)     
+  
+np.set_printoptions(suppress=True)    
 warnings.filterwarnings('ignore')
 train = pd.read_csv('../healthcareanalysis/healthcare/patient_stay/staylength/train.csv')
 test= pd.read_csv('../healthcareanalysis/healthcare/patient_stay/staylength/test.csv')
@@ -65,7 +65,6 @@ train1 = train.drop(['case_id', 'patientid', 'Hospital_region_code', 'Ward_Facil
 X1 = train1.drop('Stay', axis =1)
 y1 = train1['Stay']
 X_train, X_test, y_train, y_test = train_test_split(X1, y1, test_size =0.20, random_state =100)
-
 
 classifier_xgb = xgboost.XGBClassifier(max_depth=4, learning_rate=0.1, n_estimators=800,
                                   objective='multi:softmax', reg_alpha=0.5, reg_lambda=1.5,

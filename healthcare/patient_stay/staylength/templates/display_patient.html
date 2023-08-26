@@ -2,9 +2,13 @@
 <html>
 <body>
 
-<h1>Patient</h1>
+<h1>Members</h1>
   
-
+<ul>
+  {% for x in mypatient %}
+    <li>{{ x.firstname }} {{ x.lastname }}</li>
+  {% endfor %}
+</ul>
 
 </body>
 </html>

@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Patient
+from .models import Patientinfo
+from .forms import MyForm
 
-def staylength(request):
-    mypatient = Patient.objects.all().values()
-    template=loader.get_template('display_patient.html')
-    context={
-        'mypatient': mypatient,
-    }
-    return HttpResponse(template.render(context,request))
+
+def my_form(request):
+  if request.method == "POST":
+    form = MyForm(request.POST)
+    if form.is_valid():
+      form.save()
+  else:
+      form = MyForm()
+  return render(request, 'patientstay.html', {'form': form})
+
 
 # Create your views here.
