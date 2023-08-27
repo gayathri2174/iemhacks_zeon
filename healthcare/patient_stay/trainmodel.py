@@ -8,8 +8,8 @@ import xgboost
   
 np.set_printoptions(suppress=True)    
 warnings.filterwarnings('ignore')
-train = pd.read_csv('../healthcareanalysis/healthcare/patient_stay/staylength/train.csv')
-test= pd.read_csv('../healthcareanalysis/healthcare/patient_stay/staylength/test.csv')
+train = pd.read_csv('../healthcareanalysis/healthcare/patient_stay/train.csv')
+test= pd.read_csv('../healthcareanalysis/healthcare/patient_stay/test.csv')
 train.isnull().sum().sort_values(ascending = False)
 test.isnull().sum().sort_values(ascending = False)
 
