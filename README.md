@@ -8,5 +8,5 @@ Rural healthcare faces challenges due to inadequate patient data capture in Elec
 
 Installation:
 npm install Django pandas numpy   
-cd patientstay 
+cd patientstay     
 py manage.py runserver
