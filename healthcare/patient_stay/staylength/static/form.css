@@ -1,0 +1,13 @@
+input{
+    width: -webkit-fill-available;
+}
+
+.submit{
+    padding: 10px;
+    padding-left: 59px;
+    border-radius: 5px;
+    padding-right: 59px;
+    background-color: #1C3879;
+    color: white;
+    
+}

@@ -1,5 +1,10 @@
-<!DOCTYPE html>
+{%load static%}
 
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="{% static 'form.css' %}">
+
+</head>
 {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
@@ -27,7 +32,7 @@
         <legend>Form</legend>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button type="submit" class='submit'>Submit</button>
       </fieldset>
     </form>
 </div>

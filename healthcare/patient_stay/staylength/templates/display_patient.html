@@ -1,15 +1,50 @@
-<!-- predictions.html -->
+{%load static%}
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Predicted Stay</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}">
 </head>
+{% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
 <body>
-    <h1>Predicted Stay</h1>
-    <ul>
-        {% for prediction in predictions %}
-            <li>{{ prediction }}</li>
-        {% endfor %}
-    </ul>
+    <div class='container'>
+        <header class="masthead mb-auto">
+            <div class="inner">
+              
+              <nav class="nav nav-masthead" style="justify-content:space-between;margin-bottom:20px">
+                <div>
+                  <h3 class="masthead-brand">Cover</h3>
+          
+                </div>
+                <div style="display:flex">
+                <a class="nav-link active" href="/home">Home</a>
+                
+                <a class='nav-link' href="{% url 'display_predictions' %}">View Predicted Stay</a>
+                </div>
+              </nav>
+            </div>
+          </header>
+    <h1>Predicted Stay Length for Patients</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Prediction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name, prediction in name_and_predictions %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ prediction }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
