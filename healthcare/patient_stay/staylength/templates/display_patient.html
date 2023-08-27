@@ -11,7 +11,7 @@
   {% bootstrap_javascript %}
 <body>
     <div class='container'>
-        <header class="masthead mb-auto">
+        <header class="masthead mb-auto" style="margin-top:20px">
             <div class="inner">
               
               <nav class="nav nav-masthead" style="justify-content:space-between;margin-bottom:20px">
@@ -27,19 +27,24 @@
               </nav>
             </div>
           </header>
-    <h1>Predicted Stay Length for Patients</h1>
+    <h1 style="margin-bottom:22px">Predicted Stay Length for Patients</h1>
     
-    <table>
-        <thead>
+    <table style="width:-webkit-fill-available">
+        <thead style="text-align: center;background-color: #1C3879;">
             <tr>
+                <th>Id</th>
                 <th>Name</th>
-                <th>Prediction</th>
+                <th>Age</th>
+
+                <th>Stay length</th>
             </tr>
         </thead>
         <tbody>
-            {% for name, prediction in name_and_predictions %}
+            {% for name,age,id, prediction in name_and_predictions %}
             <tr>
+                <td>{{id}}</td>
                 <td>{{ name }}</td>
+                <td>{{age}}</td>
                 <td>{{ prediction }}</td>
             </tr>
             {% endfor %}

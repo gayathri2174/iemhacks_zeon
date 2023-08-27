@@ -110,3 +110,22 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+body{
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.nav-masthead .active .nav-link{
+    color: #333;
+}
+
+.nav-masthead .active {
+    color: black;
+    border-bottom-color: #fff;
+}
+
+.nav-masthead .nav-link + .nav-link {
+    margin-left: 1rem;
+    color: black;
+}

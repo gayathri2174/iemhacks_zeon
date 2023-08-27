@@ -35,9 +35,14 @@ def display_predictions(request):
 
     # Create a list of dictionaries to hold the data
     name = []
+    age= []
+    id=[]
     data_list = []
     for instance in patient_info_instances:
         name.append(instance.fullname)
+        age.append(instance.Age)
+        id.append(instance.count_id_patient)
+        
         data_list.append({
             'Hospital_code': instance.Hospital_code,
             'Hospital_type_code': instance.Hospital_type_code,
@@ -75,7 +80,7 @@ def display_predictions(request):
     predictions_list = predictions.tolist()
     
     # Render the template with the predicted values
-    context = {'name_and_predictions': zip(name, predictions_list)}
+    context = {'name_and_predictions': zip(name,age,id, predictions_list)}
 
     return render(request, 'display_patient.html', context)
 
