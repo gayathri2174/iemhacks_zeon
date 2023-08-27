@@ -1,16 +1,53 @@
+{%load static%}
+
 {% block content %}      
 
 {% load crispy_forms_tags %}
 
-<!--Login--> 
-<div class="container py-5">
-  <h1>Login</h1>
-  <form method="POST">
-    {% csrf_token %}
-    {{ login_form }}
-    <button class="btn btn-primary" type="submit">Login</button>
-  </form>
-  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
 
-{% endblock %}
+
+    <body class="text-center">
+      <div class='h-100'>
+        <div class="cover-container d-flex p-3 mx-auto flex-column">
+          <header class="masthead mb-auto">
+            <div class="inner">
+              <h3 class="masthead-brand">Cover</h3>
+              <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="/home">Home</a>
+                <a class="nav-link" href="/login">Log in</a>
+                <a class="nav-link" href="/register">Sign up</a>
+              </nav>
+            </div>
+          </header>
+<!--Login--> 
+        <div class="cover-container py-5 d-flex flex-column">
+            <h1>Login</h1>
+            <form method="POST">
+             {% csrf_token %}
+            {{ login_form }}
+            <button class="btn btn-primary button" type="submit">Login</button>
+            </form>
+            <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+        </div>
+        {% endblock %}
+        </div>
+        </div>
+    </body>
+</html>
+
+

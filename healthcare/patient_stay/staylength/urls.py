@@ -5,6 +5,7 @@ urlpatterns = [
    # path('',views.homepage,name='homepage'),
     path('register/', views.register_request, name='register'),
     path("login", views.login_request, name="login"),
+    path('home', views.home, name='home'),
     path("logout", views.logout_request, name= "logout"),
     path('predictions/', views.display_predictions, name='display_predictions'),
     path(r'form', views.my_form, name='form')

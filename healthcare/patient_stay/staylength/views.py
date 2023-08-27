@@ -22,6 +22,10 @@ def my_form(request):
         form = MyForm()
     return render(request, 'patientstay.html', {'form': form})
 
+def home(request):
+  return render(request, 'homepage.html')
+    
+
 def display_predictions(request):
     # Load the trained XGBoost model
     model = joblib.load('model.joblib')
