@@ -1,14 +1,15 @@
+<!-- predictions.html -->
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Predicted Stay</title>
+</head>
 <body>
-
-<h1>Members</h1>
-  
-<ul>
-  {% for x in mypatient %}
-    <li>{{ x.firstname }} {{ x.lastname }}</li>
-  {% endfor %}
-</ul>
-
+    <h1>Predicted Stay</h1>
+    <ul>
+        {% for prediction in predictions %}
+            <li>{{ prediction }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
