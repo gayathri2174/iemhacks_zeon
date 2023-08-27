@@ -1,0 +1,13 @@
+<div class="container">
+    <!-- other_template.html -->
+<a href="{% url 'display_predictions' %}">View Predicted Stay</a>
+
+    <form method="POST">
+      <fieldset>
+        <legend>Form</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+</div>
