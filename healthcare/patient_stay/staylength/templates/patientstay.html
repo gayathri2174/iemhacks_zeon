@@ -1,8 +1,27 @@
 <!DOCTYPE html>
+
+{% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
 <div class="container">
     <!-- other_template.html -->
-<a href="{% url 'display_predictions' %}">View Predicted Stay</a>
 
+<header class="masthead mb-auto">
+  <div class="inner">
+    
+    <nav class="nav nav-masthead" style="justify-content:space-between;margin-bottom:20px">
+      <div>
+        <h3 class="masthead-brand">Cover</h3>
+
+      </div>
+      <div style="display:flex">
+      <a class="nav-link active" href="/home">Home</a>
+      
+      <a class='nav-link' href="{% url 'display_predictions' %}">View Predicted Stay</a>
+      </div>
+    </nav>
+  </div>
+</header>
     <form method="POST">
       <fieldset>
         <legend>Form</legend>
@@ -11,4 +30,12 @@
         <button type="submit">Submit</button>
       </fieldset>
     </form>
+</div>
+
+
+  
+
+
+{% block content %}
+{% endblock %}
 </div>
