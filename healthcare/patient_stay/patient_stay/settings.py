@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,8 +38,32 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'staylength'
+    'staylength',
+    'crispy_forms',
+    'bootstrap5',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'  # Use the Bootstrap 4 template pack
+CRISPY_TEMPLATE_PACK_ROOT = os.path.join(BASE_DIR, 'templates')
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap4', 'uni_form')  # Allowed template packs
+
+CRISPY_CLASS_CONVERTERS = {
+    'textinput': 'form-control',
+    'passwordinput': 'form-control',
+    'emailinput': 'form-control',
+    'urlinput': 'form-control',
+    'numberinput': 'form-control',
+    'textarea': 'form-control',
+    'dateinput': 'form-control',
+    'datetimeinput': 'form-control',
+    'timeinput': 'form-control',
+    'fileinput': 'form-control-file',
+    'clearablefileinput': 'form-control-file',
+    'select': 'form-select',
+    'selectmultiple': 'form-select',
+    'checkboxselectmultiple': 'form-check',
+    'radioselect': 'form-check',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
